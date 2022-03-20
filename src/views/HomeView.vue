@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <img alt="Churras logo" src="../assets/logo192.png" />
+    <HelloWorld msg="Churrascômetro" />
   </div>
 </template>
 
@@ -16,3 +16,8 @@ export default {
   },
 };
 </script>
+<style>
+img {
+  padding: 5vh 5vw;
+}
+</style>

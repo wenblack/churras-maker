@@ -1,12 +1,26 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">
+      <figure>
+        <img class="logomenu" alt="Churras logo" src="./assets/beef.png" />
+      </figure>
+    </router-link>
+    <router-link to="/about">
+      <img class="logomenu" alt="Churras logo" src="./assets/beer.png" />
+    </router-link>
   </nav>
   <router-view />
 </template>
 
 <style>
+body {
+  background: #fafafa;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -14,17 +28,13 @@
   text-align: center;
   color: #2c3e50;
 }
-
 nav {
   padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  background: #ffcd45;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
 }
 </style>
