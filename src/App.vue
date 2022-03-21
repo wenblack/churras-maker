@@ -5,9 +5,9 @@
         <img class="logomenu" alt="Churras logo" src="./assets/beef.png" />
       </figure>
     </router-link>
-    <router-link to="/about">
+    <!--  <router-link to="/about">
       <img class="logomenu" alt="Churras logo" src="./assets/beer.png" />
-    </router-link>
+    </router-link> -->
   </nav>
   <router-view />
 </template>
