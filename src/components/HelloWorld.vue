@@ -82,6 +82,7 @@ export default {
               "https://api.whatsapp.com/send?phone&text=" + message,
               "_blank"
             );
+            Swal.fire("Enviado com Sucesso!", "", "success");
           }
         });
       } else if (weight == 350) {
@@ -114,6 +115,7 @@ export default {
               "https://api.whatsapp.com/send?phone&text=" + message,
               "_blank"
             );
+            Swal.fire("Enviado com Sucesso!", "", "success");
           }
         });
       } else if (weight == 400) {
@@ -146,6 +148,7 @@ export default {
               "https://api.whatsapp.com/send?phone&text=" + message,
               "_blank"
             );
+            Swal.fire("Enviado com Sucesso!", "", "success");
           }
         });
       }
