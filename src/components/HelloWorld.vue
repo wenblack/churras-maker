@@ -26,39 +26,26 @@ export default {
     msg: String,
   },
   methods: {
-    doStuff() {
-      let message = "";
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: message,
-        //showConfirmButton: false,
-        //timer: 1500,
-      });
-    },
     calulate() {
       //Number of Peoples
       let operator, result, pricepeople, pricetotal, message;
       let peopleNumber = 0;
       peopleNumber = document.querySelector("#peoples");
-      console.log(peopleNumber.value);
 
       //Price of Meat
       let price = "";
       price = document.querySelector("#price");
-      console.log(price.value);
 
       //Amount of Meat
       let select = document.getElementById("weight");
       let weight = select.options[select.selectedIndex].value;
-      console.log(weight);
       if (price.value == "" || peopleNumber.value == "") {
         Swal.fire({
           position: "center",
           icon: "error",
           title: "Preencha todos os campos",
-          showCloseButton: true,
-          showCancelButton: true,
+          timer: 1500,
+          showCancelButton: false,
           showConfirmButton: false,
           cancelButtonColor: "#dc3741",
           cancelButtonText: "Fechar",
@@ -70,65 +57,96 @@ export default {
         result = peopleNumber.value * operator;
         pricepeople = price.value * operator;
         pricetotal = pricepeople * peopleNumber.value;
-        message = `Selecionado 300 gramas!
-      Total da compra:${result} Kgs
-      R$ ${pricepeople}  por pessoa
-      R$ ${pricetotal}  Total da compra
-      `;
-        console.log(message);
+        message = `Orçamento do Churras:
+
+      Total de Carne:${result} Kg
+      Valor por Pessoa: R$ ${pricepeople}
+      Total da compra: R$ ${pricetotal}
+    `;
         Swal.fire({
           position: "center",
           icon: "success",
           title: message,
-          showCloseButton: true,
-          showCancelButton: true,
           showConfirmButton: false,
-          cancelButtonColor: "#4CAF50",
-          //showConfirmButton: false,
-          //timer: 1500,
+          showCancelButton: true,
+          showDenyButton: true,
+          denyButtonColor: "#4CAF50",
+          cancelButtonText: "Copiar Orçamento",
+          denyButtonText: "Enviar pelo whats",
+        }).then((result) => {
+          if (result.isDismissed) {
+            navigator.clipboard.writeText(message);
+            Swal.fire("Copiado com sucesso!", "", "success");
+          } else if (result.isDenied) {
+            window.open(
+              "https://api.whatsapp.com/send?phone&text=" + message,
+              "_blank"
+            );
+          }
         });
       } else if (weight == 350) {
         operator = 0.35;
         result = peopleNumber.value * operator;
         pricepeople = price.value * operator;
         pricetotal = pricepeople * peopleNumber.value;
-        message = `Selecionado 350 gramas!
-      Total da compra:${result} Kgs
-      R$ ${pricepeople}  por pessoa
-      R$ ${pricetotal}  Total da compra
-      `;
-        console.log(message);
+        message = `Orçamento do Churras:
+
+      Total de Carne:${result} Kg
+      Valor por Pessoa: R$ ${pricepeople}
+      Total da compra: R$ ${pricetotal}
+    `;
         Swal.fire({
           position: "center",
           icon: "success",
           title: message,
-          showCloseButton: true,
-          showCancelButton: true,
           showConfirmButton: false,
-          cancelButtonColor: "#4CAF50",
-          //showConfirmButton: false,
-          //timer: 1500,
+          showCancelButton: true,
+          showDenyButton: true,
+          denyButtonColor: "#4CAF50",
+          cancelButtonText: "Copiar Orçamento",
+          denyButtonText: "Enviar pelo whats",
+        }).then((result) => {
+          if (result.isDismissed) {
+            navigator.clipboard.writeText(message);
+            Swal.fire("Copiado com sucesso!", "", "success");
+          } else if (result.isDenied) {
+            window.open(
+              "https://api.whatsapp.com/send?phone&text=" + message,
+              "_blank"
+            );
+          }
         });
       } else if (weight == 400) {
         operator = 0.4;
         result = peopleNumber.value * operator;
         pricepeople = price.value * operator;
         pricetotal = pricepeople * peopleNumber.value;
-        message = `Selecionado 400 gramas!
-      Total da compra:${result} Kgs
-      R$ ${pricepeople}  por pessoa
-      R$ ${pricetotal}  Total da compra
-      `;
-        console.log(message);
+        message = `Orçamento do Churras:
+
+      Total de Carne:${result} Kg
+      Valor por Pessoa: R$ ${pricepeople}
+      Total da compra: R$ ${pricetotal}
+    `;
         Swal.fire({
           position: "center",
           icon: "success",
           title: message,
-          showCloseButton: true,
-          showCancelButton: true,
           showConfirmButton: false,
-          cancelButtonColor: "#4CAF50",
-          //timer: 1500,
+          showCancelButton: true,
+          showDenyButton: true,
+          denyButtonColor: "#4CAF50",
+          cancelButtonText: "Copiar Orçamento",
+          denyButtonText: "Enviar pelo whats",
+        }).then((result) => {
+          if (result.isDismissed) {
+            navigator.clipboard.writeText(message);
+            Swal.fire("Copiado com sucesso!", "", "success");
+          } else if (result.isDenied) {
+            window.open(
+              "https://api.whatsapp.com/send?phone&text=" + message,
+              "_blank"
+            );
+          }
         });
       }
     },
